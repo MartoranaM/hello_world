@@ -1,21 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/martoranam/hello_world/helloworlder"
+)
 
 type Printable struct {
 	text string
 }
 
-func update(target *string) {
-	*target += "World!"
-}
-
 func main() {
 	var helloworld Printable
 
-	helloworld.text = "Hello "
+	helloworld.text = "Empty"
 	fmt.Printf(helloworld.text)
 
-	update(&helloworld.text)
+	helloworlder.Update(&helloworld.text)
 	fmt.Printf("\n%s", helloworld.text)
 }
